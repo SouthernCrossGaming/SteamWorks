@@ -23,7 +23,7 @@
 */
 void check_thunks(unsigned char *dest, unsigned char *pc)
 {
-#if defined WIN32
+#if defined(_WIN32) || defined(__x86_64__)
 	return;
 #else
 	/* Step write address back 4 to the start of the function address */

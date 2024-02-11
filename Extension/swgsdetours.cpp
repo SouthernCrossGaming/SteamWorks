@@ -56,15 +56,15 @@ SteamWorksGSDetours::SteamWorksGSDetours()
 	const char *pShutdownFuncName = "SteamGameServer_Shutdown";
 
 	IGameConfig *pConfig = NULL;
-	if (g_SteamWorks.pSWGameData)
-	{
-		pConfig = g_SteamWorks.pSWGameData->GetGameData();
-		if (pConfig != NULL)
-		{
-			pConfig->GetMemSig(pShutdownFuncName, &pSteamShutdownAddress);
-			pConfig->GetMemSig(pInitSafeFuncName, &pSteamSafeInitAddress);
-		}
-	}
+	// if (g_SteamWorks.pSWGameData)
+	// {
+	// 	pConfig = g_SteamWorks.pSWGameData->GetGameData();
+	// 	if (pConfig != NULL)
+	// 	{
+	// 		pConfig->GetMemSig(pShutdownFuncName, &pSteamShutdownAddress);
+	// 		pConfig->GetMemSig(pInitSafeFuncName, &pSteamSafeInitAddress);
+	// 	}
+	// }
 
 	ILibrary *pLibrary = libsys->OpenLibrary(pLibSteamPath, NULL, 0);
 	if (pLibrary != NULL)

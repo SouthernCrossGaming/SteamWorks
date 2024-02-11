@@ -190,18 +190,20 @@ static cell_t sm_ClearRules(IPluginContext *pContext, const cell_t *params)
 	return 1;
 }
 
-static cell_t sm_ForceHeartbeat(IPluginContext *pContext, const cell_t *params)
-{
-	ISteamGameServer *pServer = GetGSPointer();
+//This is not found in the latest steamworks
+// static cell_t sm_ForceHeartbeat(IPluginContext *pContext, const cell_t *params)
+// {
+// 	ISteamGameServer *pServer = GetGSPointer();
 
-	if (pServer == NULL)
-	{
-		return 0;
-	}
+// 	if (pServer == NULL)
+// 	{
+// 		return 0;
+// 	}
 
-	pServer->ForceHeartbeat();
-	return 1;
-}
+//
+// 	pServer->ForceHeartbeat();
+// 	return 1;
+// }
 
 static cell_t sm_UserHasLicenseForApp(IPluginContext *pContext, const cell_t *params)
 {
@@ -301,7 +303,7 @@ static sp_nativeinfo_t gsnatives[] = {
 	{"SteamWorks_IsConnected",				sm_IsConnected},
 	{"SteamWorks_SetRule",						sm_SetRule},
 	{"SteamWorks_ClearRules",						sm_ClearRules},
-	{"SteamWorks_ForceHeartbeat",				sm_ForceHeartbeat},
+	// {"SteamWorks_ForceHeartbeat",				sm_ForceHeartbeat},
 	{"SteamWorks_HasLicenseForApp",			sm_UserHasLicenseForApp},
 	{"SteamWorks_HasLicenseForAppId",			sm_UserHasLicenseForAppId},
 	{"SteamWorks_GetClientSteamID",			sm_GetClientSteamID},

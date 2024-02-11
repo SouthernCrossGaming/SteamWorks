@@ -29,7 +29,10 @@ for sdk_name in SteamWorks.sdks:
   binary.compiler.cxxincludes += [os.path.join(SteamWorks.steamworks_root, 'public', 'steam'), os.path.join(sdk.path, 'public', 'steam')];
   
   if binary.compiler.target.platform == 'linux':
-    binary.compiler.postlink += os.path.join(SteamWorks.steamworks_root, 'redistributable_bin', 'linux32', 'libsteam_api.so'),;
+    if binary.compiler.target.arch == 'x86_64':
+      binary.compiler.postlink += os.path.join(SteamWorks.steamworks_root, 'redistributable_bin', 'linux64', 'libsteam_api.so'),;
+    else:
+      binary.compiler.postlink += os.path.join(SteamWorks.steamworks_root, 'redistributable_bin', 'libsteam_api.so'),;
 	
   if binary.compiler.target.platform == 'windows':
     binary.compiler.postlink += os.path.join(SteamWorks.steamworks_root, 'redistributable_bin', 'steam_api.lib'),;

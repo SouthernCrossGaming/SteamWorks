@@ -21,6 +21,8 @@
 #include "steam_gameserver.h"
 #include "CDetour/detours.h"
 
+class CDetour;
+
 class SteamWorksGSDetours
 {
 	public:

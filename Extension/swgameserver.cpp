@@ -126,7 +126,6 @@ ISteamGameServer *SteamWorksGameServer::GetGameServer(void)
 		GetGameSpecificConfigInterface("SteamGameServerInterfaceVersion", pVersion);
 		this->m_pGameServer = this->GetSteamClient()->GetISteamGameServer(hSteamUser, hSteamPipe, pVersion);
 	}
-	
 	return this->m_pGameServer;
 }
 
@@ -237,9 +236,13 @@ const char *SteamWorksGameServer::GetLibraryPath(void)
 	if (pLibSteamPath == NULL)
 	{
 #if defined POSIX
+	#if defined X64
+		pLibSteamPath = "./bin/linux64/libsteam_api.so";
+	#else
 		pLibSteamPath = "./bin/libsteam_api.so";
+	#endif
 #elif defined WIN32_LEAN_AND_MEAN
-		pLibSteamPath = "./bin/steam_api.dll"; /* Naming from SteamTools. */
+	pLibSteamPath = "./bin/steam_api.dll"; /* Naming from SteamTools. */
 #endif
 
 		if (g_SteamWorks.pSWGameData)

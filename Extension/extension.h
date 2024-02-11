@@ -28,7 +28,7 @@
  *
  * Version: $Id$
  */
-
+#pragma once
 #ifndef _INCLUDE_SOURCEMOD_EXTENSION_PROPER_H_
 #define _INCLUDE_SOURCEMOD_EXTENSION_PROPER_H_
 
@@ -37,6 +37,7 @@
  * @brief Sample extension code header.
  */
 
+#include "CDetour/detours.h"
 #include "smsdk_ext.h"
 #include "isteamgameserver.h"
 #include "steam_gameserver.h"
